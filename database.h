@@ -6,7 +6,7 @@
 
 /* 
  * File:   database.h
- * Author: sponono
+ * Author: Mbele Lebohang
  *
  * Created on 25 March 2017, 9:15 PM
  */
@@ -14,14 +14,15 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-class database {
-public:
-    database();
-    database(const database& orig);
-    virtual ~database();
-private:
+namespace MBLLEB006 {
+    class database {
+    public:
+        database();
+        database(const database& orig);
+        virtual ~database();
+    private:
 
-};
-
+    };
+}
 #endif /* DATABASE_H */
 
