@@ -25,12 +25,18 @@ database::database() {
 }
 
 database::database(const char* filename) {
+    load(filename);
+}
+
+database::~database() {
+}
+
+int database::load ( const char* filename ){
   string line;
-  ifstream old_file (filename);
-  if (old_file.is_open())
+  ifstream file (filename);
+  if (file.is_open())
   {
-    while ( getline (old_file,line) )
-    {
+    while ( getline (file,line) ){
         StudentRecord student;
         
         int pos = line.find(", ");
@@ -49,19 +55,31 @@ database::database(const char* filename) {
         student.class_record = line.substr(0, pos);
         
         records.push_back(student);
+        }
+        file.close();
     }
-    old_file.close();
-  }
-
-  else {
-      cout << "Unable to open file" << filename << endl; 
-  }
+    else{
+        cout << "Unable to open file"<< endl;
+        return 0;
+    }
 }
 
-database::~database() {
-}
+int database::save(const char* filename){
+    // save student records to .csv file filename
 
-
-int database::sum(int a, int b){
-	return a + b;
+    ofstream records_file (filename);
+    if (records_file.is_open())
+    {
+        for (StudentRecord student : records){
+            records_file << student.name << ", "<< student.surname << ", " ;
+            records_file << student.student_number << ", "<< student.class_record;
+            records_file << '\n';
+        }
+        records_file.close();
+        return 1;
+    }
+    else{
+        cout << "Unable to open file";
+        return 0; // return 0 to indicate no error
+    }
 }

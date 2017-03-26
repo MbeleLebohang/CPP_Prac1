@@ -42,19 +42,25 @@ namespace MBLLEB006 {
          * @param filename
          */
         database(const char* filename);
+        
         virtual ~database();
+        
         /**
-         * add two number a and b and return the sum
-         * @param a
-         * @param b
+         * Save the current data to the database
+         * @param filename
          * @return 
          */
-        int sum(int a, int b);
-        
+        int save(const char* filename);
+                
         /* The means to store the student records. */
         vector<StudentRecord> records;
     private:
- 
+        /**
+         * Load a given database/file to the new instance of database
+         * @param filename
+         * @return 
+         */
+        int load(const char* filename);
     };
 }
 #endif /* DATABASE_H */
