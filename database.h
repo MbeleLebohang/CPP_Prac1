@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   database.h
  * Author: Mbele Lebohang
@@ -20,6 +14,8 @@ namespace MBLLEB006 {
         database();
         database(const database& orig);
         virtual ~database();
+        
+        int sum(int a, int b);
     private:
 
     };

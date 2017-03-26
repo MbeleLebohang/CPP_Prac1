@@ -27,3 +27,7 @@ database::database(const database& orig) {
 database::~database() {
 }
 
+
+int database::sum(int a, int b){
+	return a + b;
+}
