@@ -11,6 +11,7 @@
  */
 
 // Standard includes
+#include <string>
 
 // Join the std namespace
 using namespace std;
@@ -21,7 +22,7 @@ using namespace MBLLEB006;
 database::database() {
 }
 
-database::database(const database& orig) {
+database::database(const char* filename) {
 }
 
 database::~database() {
