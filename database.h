@@ -54,7 +54,7 @@ namespace MBLLEB006 {
         /* The means to store the student records. */
         vector<StudentRecord> records;
     private:
-
+ 
     };
 }
 #endif /* DATABASE_H */
