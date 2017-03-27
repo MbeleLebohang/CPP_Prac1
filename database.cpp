@@ -21,6 +21,10 @@ using namespace std;
 #include "database.h"
 using namespace MBLLEB006;
 
+/*************************************************************************/
+/* Implementation of database methods                                        */
+/*************************************************************************/
+
 database::database() {
 }
 

@@ -51,16 +51,18 @@ namespace MBLLEB006 {
          * @return 
          */
         int save(const char* filename);
-                
-        /* The means to store the student records. */
-        vector<StudentRecord> records;
-    private:
+                  
         /**
          * Load a given database/file to the new instance of database
          * @param filename
          * @return 
          */
         int load(const char* filename);
+        
+        /* The means to store the student records. */
+        vector<StudentRecord> records;
+    private:
+            
     };
 }
 #endif /* DATABASE_H */

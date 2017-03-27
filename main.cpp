@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
+ * CSC2022H Assignment 1 - database
+ * 
  * File:   main.cpp
  * Author: Mbele Lebohang
  *
  * Created on 25 March 2017, 8:48 PM
  */
 
+// standard includes
 #include <cstdlib>
 #include <string>
 #include <iostream>
 #include <fstream>
 
+//join the std namespace
 using namespace std;
 
 #include "database.h"
@@ -25,7 +23,7 @@ using namespace MBLLEB006;
 int main ( int argc, char* argv [] )
 {
     int cont = 1; // continue running the program until cont=0
- 
+    database student_records;
     string record_name = "testlog.csv";
     cout << "Welcome to Student Records\n";
 
@@ -35,17 +33,9 @@ int main ( int argc, char* argv [] )
     }
 
     // try to load the log file
-    ifstream record_file(record_name);
-    if (is_empty(record_file)) {
+    if (!student_records.load(record_name.c_str())) {
         // if it doesn't load then assume starting with an empty log
-        cout << "Starting with empty Database\n";
-        record_file.close();
-        database database_records;
-    }
-    else{
-        cout << "Loading an old Database." << endl;
-        record_file.close();
-        database database_records(record_name);
+        cerr << "Starting with empty eLog\n";
     }
 
     // continuously display the menu and ask user to choose an option
@@ -56,74 +46,80 @@ int main ( int argc, char* argv [] )
 
         // Display the menu
         cout << "\nMENU:\n"
-            "1:   Add entry\n"
-            "2:   List all entries\n"
-            "3:   List priority\n"
-            "4:   Search\n"
-            "5:   Delete\n"
-            "6:   Save\n"
-            "Esc: Exit\n";
+            "1:   Add student\n"
+            "2:   Read database\n"
+            "3:   Save database\n"
+            "4:   Display given student\n"
+            "5:   Grade student\n"
+            "99:  Exit\n";
         cout << "Select an option: ";
         // User needs to select one of the options
 
-        int ch = getch();
+        int ch;
+        cin >> ch;
         switch (ch) {
             case 1: // here is code to ask for a priority and keywords to enter into the log
                     {
-                       cout << "Priority: ";
+                      cout << 1 << endl;
+                      /* cout << "Priority: ";
                        int priority;
                        cin  >> priority;
                        cout << "Notes: ";
                        string notes;
                        cin  >> notes;
-                       elog.add(priority,notes);
+                       elog.add(priority,notes);*/
                        break;
                     }
 
             case 2: // List all entries
                     {
-                        elog.listEnties();
+                        cout << 2 << endl;
+                        /*elog.listEnties();*/
                         break;
                     }
 
             case 3: // List all entries
                     {
-                        cout << "Enter a priority number: ";
+                        cout << 3 << endl;
+                        /*cout << "Enter a priority number: ";
                         int priority;
                         cin >> priority;
-                        elog.listPriorities(priority);
+                        elog.listPriorities(priority);*/
                         break;
                     }
             case 4: // search an enry with a given word
                     {
-                        cout << "Search string: ";
+                        cout << 4 << endl;
+                        /*cout << "Search string: ";
                         string word;
                         cin >> word;
-                        elog.Search(word.c_str());
+                        elog.Search(word.c_str());*/
                         break;
                     }
             case 5: // delete the nth entry
                     {
-                        cout << "Enter the entry number: ";
+                        cout << 5 << endl;
+                        /*cout << "Enter the entry number: ";
                         int n;
                         cin >> n;
-                        elog.Delete(n);
+                        elog.Delete(n);*/
                         break;
                     }
             case 6: // Save the file to a given filame
                     {
-                        cout << "Enter a filename:";
+                        cout << 6 << endl;
+                        /*cout << "Enter a filename:";
                         string filename;
                         cin >> filename;
 
-                        elog.save(filename.c_str());
+                        elog.save(filename.c_str());*/
                         break;
                     }
 
-            case 27 :
+            case 99:
                     {
                         cont=0;
-                        break; // Esc key is code 27, exists program
+                        break; 
                     }
             default :
                     {
