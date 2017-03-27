@@ -97,9 +97,8 @@ void database::add(string name, string surname, string student_no, string class_
         records.push_back(student);
         index = records.size()-1;
     }
-    else{
-        // Update old record
-    }
+    
+    // Update old record
     records[index].name = name;
     records[index].surname = surname;
     records[index].student_number = student_no;
