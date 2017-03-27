@@ -10,6 +10,7 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
+#include <sstream>
 
 // Join the std namespace
 using namespace std;
@@ -73,6 +74,12 @@ namespace MBLLEB006 {
          * @param student_no
          */
         void search(const char* filename,const char* student_no);
+        
+        /**
+         * Print the average corresponding to the given student number
+         * @param student_no
+         */
+        void average(string student_no);
         
         /* The means to store the student records. */
         vector<StudentRecord> records;

@@ -184,6 +184,41 @@ void database::search(const char* filename, const char* student_no){
     }
 }
 
+void database::average(string student_no){
+    
+    int index = find(student_no);
+    string results;
+    if(index >= 0){
+        results = records[index].class_record;
+    }
+    else{
+        cout << "The record of " << student_no << " does not exist in the database."<<endl;
+        cout << "Try again." << endl;
+        return;
+    }
+    // Display the menu
+    cout << "\nStudent Number\t\t"
+            "Average\n";
+    istringstream iss(results);
+    string string_record;
+    double sum = 0;
+    int n = 0;
+    while (!iss.eof()) { 
+        iss >> string_record;
+        int foo;
+        n++;
+        stringstream(string_record) >> foo;
+        sum += foo;
+        cout << "Accumulated Sum: " << sum << endl; 
+    }
+    if(n !=  0){
+        cout << student_no << "\t\t" << (double)sum/n << endl;
+    }
+    else{
+        cout << student_no << "\t\t"<< sum << endl;
+    }
+}
+
 int database::find(string student_no){
     
     for(int i = 0; i < records.size(); i++){
