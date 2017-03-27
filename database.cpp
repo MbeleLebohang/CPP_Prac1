@@ -175,7 +175,7 @@ void database::search(const char* filename, const char* student_no){
             
         }
         if(not_found){
-            cout << "NO RESULTS FOUND!!!"
+            cout << "NO RESULTS FOUND!!!" << endl;
         }
         file.close();
     }

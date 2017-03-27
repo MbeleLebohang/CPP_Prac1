@@ -68,6 +68,12 @@ namespace MBLLEB006 {
          */
         void read(const char* filename);
         
+        /**
+         * find a record with a given student number in a given database file
+         * @param student_no
+         */
+        void search(const char* filename,const char* student_no);
+        
         /* The means to store the student records. */
         vector<StudentRecord> records;
     private:

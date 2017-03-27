@@ -61,36 +61,37 @@ int main ( int argc, char* argv [] )
             case 1: // Add a student record
                     {
                       cout << "Enter the student record." << endl;
-                       cout << "Name: ";
+                       cout << "Name: " << endl;
                        string name;
-                       cin  >> name;
-                       cout << "Surname: ";
+                       getline(cin, name);
+                       getline(cin, name);
+                       cout << "Surname: " << endl;
                        string surname;
-                       cin  >> surname;
-                       cout << "Student Number: ";
+                       getline(cin, surname);
+                       cout << "Student Number: " << endl;
                        string student_no;
-                       cin  >> student_no;
-                       cout << "Class record: ";
+                       getline(cin, student_no);
+                       cout << "Class record: " << endl;
                        string class_record;
-                       cin  >> class_record;
+                       getline(cin, class_record);
+                       cout << name << surname << student_no << class_record << endl;
                        student_records.add(name, surname, student_no, class_record);
                        break;
                     }
 
             case 2: // List all records saved in the database (csv file)
                     {
-                        cout << 2 << endl;
                         student_records.read(record_name.c_str());
                         break;
                     }
-
-            case 3: // List all entries
+            
+            case 3: // Save the file to a given filename
                     {
-                        cout << 3 << endl;
-                        /*cout << "Enter a priority number: ";
-                        int priority;
-                        cin >> priority;
-                        elog.listPriorities(priority);*/
+                        cout << "Enter a filename to save to (.csv):";
+                        string filename;
+                        cin >> filename;
+
+                        student_records.save(filename.c_str());
                         break;
                     }
             case 4: // search a record of a given student number
@@ -98,8 +99,8 @@ int main ( int argc, char* argv [] )
                         cout << 4 << endl;
                         cout << "Search student number: ";
                         string student_no;
-                        cin >> student_no;
-                        student_records.Search(word.c_str());
+                        getline(cin, student_no);
+                        student_records.search(record_name.c_str(), student_no.c_str());
                         break;
                     }
             case 5: // delete the nth entry
@@ -109,16 +110,6 @@ int main ( int argc, char* argv [] )
                         int n;
                         cin >> n;
                         elog.Delete(n);*/
-                        break;
-                    }
-            case 6: // Save the file to a given filame
-                    {
-                        cout << 6 << endl;
-                        /*cout << "Enter a filename:";
-                        string filename;
-                        cin >> filename;
-
-                        elog.save(filename.c_str());*/
                         break;
                     }
 
