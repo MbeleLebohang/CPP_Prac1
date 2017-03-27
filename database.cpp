@@ -87,3 +87,14 @@ int database::save(const char* filename){
         return 0; // return 0 to indicate no error
     }
 }
+
+void database::add(string name, string surname, string student_no, string class_record){
+    // Creating a record and adding it to the vector
+    StudentRecord student;
+    student.name = name;
+    student.surname =surname;
+    student.student_number = student_no;
+    student.class_record = class_record;
+    
+    records.push_back(student);
+}

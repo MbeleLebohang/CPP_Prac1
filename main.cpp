@@ -60,14 +60,20 @@ int main ( int argc, char* argv [] )
         switch (ch) {
             case 1: // here is code to ask for a priority and keywords to enter into the log
                     {
-                      cout << 1 << endl;
-                      /* cout << "Priority: ";
-                       int priority;
-                       cin  >> priority;
-                       cout << "Notes: ";
-                       string notes;
-                       cin  >> notes;
-                       elog.add(priority,notes);*/
+                      cout << "Enter the student record." << endl;
+                       cout << "Name: ";
+                       string name;
+                       cin  >> name;
+                       cout << "Surname: ";
+                       string surname;
+                       cin  >> surname;
+                       cout << "Student Number: ";
+                       string student_no;
+                       cin  >> student_no;
+                       cout << "Class record: ";
+                       string class_record;
+                       cin  >> class_record;
+                       student_records.add(name, surname, student_no, class_record);
                        break;
                     }
 

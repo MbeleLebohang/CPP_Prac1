@@ -34,19 +34,14 @@ namespace MBLLEB006 {
          * Create a database with empty student records
          */
         database();
-        /**
-         * Pre-conditions: Given and already existing database file (.csv) load it
-         *                  into the object vector as the object is created
-         * Post-conditions: The new object instance should have a database with 
-         *                  all records in filename
-         * @param filename
-         */
+
         database(const char* filename);
         
         virtual ~database();
         
         /**
          * Save the current data to the database
+         * Returns true if successfully saved, otherwise false.
          * @param filename
          * @return 
          */
@@ -54,10 +49,21 @@ namespace MBLLEB006 {
                   
         /**
          * Load a given database/file to the new instance of database
+         * Returns true if file was loaded.
+         * Returns false if file was not found.
          * @param filename
          * @return 
          */
         int load(const char* filename);
+        
+        /**
+         * Function to add student records
+         * @param name
+         * @param surname
+         * @param student_no
+         * @param class_record
+         */
+        void add(string name, string surname, string student_no, string class_record);
         
         /* The means to store the student records. */
         vector<StudentRecord> records;
