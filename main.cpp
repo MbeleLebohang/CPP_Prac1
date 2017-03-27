@@ -96,33 +96,18 @@ int main ( int argc, char* argv [] )
                     }
             case 4: // search a record of a given student number
                     {
-                        cout << 4 << endl;
                         cout << "Search student number: ";
                         string student_no;
                         cin >> student_no;
                         student_records.search(record_name.c_str(), student_no.c_str());
                         break;
                     }
-            case 5: // delete the nth entry
+            case 5: // Print average of student_no
                     {
-                        cout << 5 << endl;
-                        /*cout << "Enter the entry number: ";
-                        int n;
-                        cin >> n;
-                        elog.Delete(n);*/
-                        
-                        string s("1 2 3 4 5 6 7 8 9 10");
-                        istringstream iss(s);
-                        string subs;
-                        double sum = 0;
-                        while (!iss.eof()) { 
-                            iss >> subs;
-                            int foo;
-                            stringstream(subs) >> foo;
-                            sum += foo;
-                            cout << "Accumulated Sum: " << sum << endl; 
-                        }
-                        cout << (double)sum/2 << endl;
+                        cout << "Enter student number: ";
+                        string student_no;
+                        cin >> student_no;
+                        student_records.average(student_no);
                         break;
                     }
 

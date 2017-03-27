@@ -209,7 +209,6 @@ void database::average(string student_no){
         n++;
         stringstream(string_record) >> foo;
         sum += foo;
-        cout << "Accumulated Sum: " << sum << endl; 
     }
     if(n !=  0){
         cout << student_no << "\t\t" << (double)sum/n << endl;
