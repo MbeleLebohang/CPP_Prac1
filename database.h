@@ -27,9 +27,6 @@ struct StudentRecord{
 namespace MBLLEB006 {
     class database {
     public:
-       /**
-
-        */
         /**
          * Create a database with empty student records
          */
@@ -68,7 +65,13 @@ namespace MBLLEB006 {
         /* The means to store the student records. */
         vector<StudentRecord> records;
     private:
-            
+        /**
+         * Find a student of a given student number
+         *      return index of student if found, else return -1
+         * @param student_no
+         * @return 
+         */
+        int find(string student_no);
     };
 }
 #endif /* DATABASE_H */

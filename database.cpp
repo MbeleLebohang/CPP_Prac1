@@ -90,11 +90,28 @@ int database::save(const char* filename){
 
 void database::add(string name, string surname, string student_no, string class_record){
     // Creating a record and adding it to the vector
-    StudentRecord student;
-    student.name = name;
-    student.surname =surname;
-    student.student_number = student_no;
-    student.class_record = class_record;
+    int index = find(student_no);
+    if(index == -1){
+        // add new record
+        StudentRecord student;
+        records.push_back(student);
+        index = records.size()-1;
+    }
+    else{
+        // Update old record
+    }
+    records[index].name = name;
+    records[index].surname = surname;
+    records[index].student_number = student_no;
+    records[index].class_record = class_record;
+}
+
+int database::find(string student_no){
     
-    records.push_back(student);
+    for(int i = 0; i < records.size(); i++){
+        if(records[i].student_number == student_no){
+            return i;
+        }
+    }
+    return -1;
 }
