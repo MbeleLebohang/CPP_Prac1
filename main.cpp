@@ -93,13 +93,13 @@ int main ( int argc, char* argv [] )
                         elog.listPriorities(priority);*/
                         break;
                     }
-            case 4: // search an enry with a given word
+            case 4: // search a record of a given student number
                     {
                         cout << 4 << endl;
-                        /*cout << "Search string: ";
-                        string word;
-                        cin >> word;
-                        elog.Search(word.c_str());*/
+                        cout << "Search student number: ";
+                        string student_no;
+                        cin >> student_no;
+                        student_records.Search(word.c_str());
                         break;
                     }
             case 5: // delete the nth entry
