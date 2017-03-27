@@ -62,6 +62,12 @@ namespace MBLLEB006 {
          */
         void add(string name, string surname, string student_no, string class_record);
         
+        /**
+         * Read the records from the given file.
+         * @param filename
+         */
+        void read(const char* filename);
+        
         /* The means to store the student records. */
         vector<StudentRecord> records;
     private:

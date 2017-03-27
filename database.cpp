@@ -105,6 +105,42 @@ void database::add(string name, string surname, string student_no, string class_
     records[index].class_record = class_record;
 }
 
+void database::read(const char* filename){
+    string line;
+    ifstream file (filename);
+    // Display the menu
+    cout << "\nName\t\t"
+        "Surname\t\t"
+        "Student Number\t\t"
+        "Class Record\n";
+    if (file.is_open())
+    {
+        while ( getline (file,line) ){
+            int pos = line.find(", ");
+            string name = line.substr(0, pos);
+
+            line = line.substr(pos + 2);
+            pos = line.find(", ");
+            string surname = line.substr(0, pos);  
+
+            line = line.substr(pos + 2);
+            pos = line.find(", ");
+            string student_no = line.substr(0, pos);      
+
+            line = line.substr(pos + 2);
+            pos = line.find(", ");
+            string class_record = line.substr(0, pos);
+            
+            cout << name << "\t\t" << surname << "\t\t" << student_no << "\t\t" << class_record << endl;
+            
+        }
+        file.close();
+    }
+    else{
+        cout << "Unable to open file"<< endl;
+    }
+}
+
 int database::find(string student_no){
     
     for(int i = 0; i < records.size(); i++){

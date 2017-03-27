@@ -24,7 +24,7 @@ int main ( int argc, char* argv [] )
 {
     int cont = 1; // continue running the program until cont=0
     database student_records;
-    string record_name = "testlog.csv";
+    string record_name = "student_records.csv";
     cout << "Welcome to Student Records\n";
 
     // check if a parameter was given for the name of the log file to use
@@ -58,7 +58,7 @@ int main ( int argc, char* argv [] )
         int ch;
         cin >> ch;
         switch (ch) {
-            case 1: // here is code to ask for a priority and keywords to enter into the log
+            case 1: // Add a student record
                     {
                       cout << "Enter the student record." << endl;
                        cout << "Name: ";
@@ -77,10 +77,10 @@ int main ( int argc, char* argv [] )
                        break;
                     }
 
-            case 2: // List all entries
+            case 2: // List all records saved in the database (csv file)
                     {
                         cout << 2 << endl;
-                        /*elog.listEnties();*/
+                        student_records.read(record_name.c_str());
                         break;
                     }
 
